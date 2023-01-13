@@ -1,7 +1,10 @@
+import Messenger from "./components/Messenger";
+
 function App() {
   return (
     <div>
-      <h1>Hello</h1>
+      <p className=" text-red-600"> this is App</p>
+      <Messenger />
     </div>
   );
 }
