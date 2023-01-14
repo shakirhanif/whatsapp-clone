@@ -5,8 +5,7 @@ const accountSlice = createSlice({
   initialState: { accountState: null },
   reducers: {
     setAccount(state, action) {
-      state.accountState =
-        "redux is setup successfully horraaa!!!!!!" + action.payload;
+      state.accountState = action.payload;
     },
   },
 });

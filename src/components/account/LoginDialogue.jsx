@@ -4,18 +4,14 @@ import { Box, List, ListItem, styled, Typography } from "@mui/material";
 import qr from "../../assets/images/qr.jpg";
 import { GoogleLogin } from "@react-oauth/google";
 import jwtDecode from "jwt-decode";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { accountActions } from "../../redux/account-actions";
 const Container = styled(Box)`
   padding: 56px;
 `;
 
 const LoginDialogue = () => {
-  const account = useSelector((state) => state.account.accountState);
   const dispatch = useDispatch();
-  const reduxFunction = () => {
-    dispatch(accountActions.setAccount("payload is working too"));
-  };
   return (
     <Dialog
       open={true}
@@ -51,13 +47,12 @@ const LoginDialogue = () => {
             onSuccess={(res) => {
               const decoded = jwtDecode(res.credential);
               console.log(decoded);
+              dispatch(accountActions.setAccount(decoded));
             }}
             onError={(res) => {
               console.log("Login Failed", res);
             }}
           />
-          <button onClick={reduxFunction}>clickME</button>
-          <h1>{account}</h1>
         </Container>
       </Box>
     </Dialog>
