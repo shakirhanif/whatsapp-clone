@@ -2,6 +2,8 @@ import React from "react";
 import Dialog from "@mui/material/Dialog";
 import { Box, List, ListItem, styled, Typography } from "@mui/material";
 import qr from "../../assets/images/qr.jpg";
+import { GoogleLogin } from "@react-oauth/google";
+import jwtDecode from "jwt-decode";
 const Container = styled(Box)`
   padding: 56px;
 `;
@@ -37,6 +39,15 @@ const LoginDialogue = () => {
         </Container>
         <Container>
           <img src={qr} alt="/" className="h-[256px] w-[256px]" />
+          <GoogleLogin
+            onSuccess={(res) => {
+              const decoded = jwtDecode(res.credential);
+              console.log(decoded);
+            }}
+            onError={(res) => {
+              console.log("Login Failed", res);
+            }}
+          />
         </Container>
       </Box>
     </Dialog>
