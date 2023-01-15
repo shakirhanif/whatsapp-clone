@@ -1,9 +1,9 @@
 import { Box, styled } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import ChatIcon from "@mui/icons-material/Chat";
 import DonutLargeIcon from "@mui/icons-material/DonutLarge";
+import HeaderMenu from "./HeaderMenu";
 
 const Header = () => {
   const account = useSelector((state) => state.account.accountState);
@@ -37,7 +37,7 @@ const Header = () => {
       >
         <DonutLargeIcon sx={{ marginRight: "10px" }} />
         <ChatIcon sx={{ marginX: "10px", paddingTop: "2px" }} />
-        <MoreVertIcon sx={{ marginLeft: "8px" }} />
+        <HeaderMenu sx={{ marginLeft: "8px" }} />
       </Box>
     </Box>
   );
