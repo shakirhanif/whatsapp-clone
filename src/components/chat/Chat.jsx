@@ -1,7 +1,7 @@
 import { Box, Dialog } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
-import Menu from "../menu/Menu";
+import Menu from "./menu/Menu";
 import EmptyChat from "./chat/EmptyChat";
 
 const Chat = () => {
