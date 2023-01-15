@@ -1,12 +1,42 @@
-import { Dialog } from "@mui/material";
+import { Box, Dialog } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
+import Menu from "../menu/Menu";
+import EmptyChat from "./chat/EmptyChat";
 
 const Chat = () => {
   const account = useSelector((state) => state.account.accountState);
   return (
-    <Dialog open={true}>
-      <h1>this is chat dialogue</h1>
+    <Dialog
+      open={true}
+      hideBackdrop={true}
+      maxWidth={"md"}
+      PaperProps={{
+        sx: {
+          height: "100%",
+          width: "100%",
+          maxWidth: "100%",
+          marginX: "10px",
+          marginY: "0px",
+          borderRadius: "0px",
+        },
+      }}
+    >
+      <Box sx={{ display: "flex", flexDirection: "row", height: "100%" }}>
+        <Box sx={{ width: "30%", minWidth: "200px", height: "100%" }}>
+          <Menu />
+        </Box>
+        <Box
+          sx={{
+            width: "70%",
+            minWidth: "300px",
+            height: "100%",
+            borderLeft: "solid 3px rgba(0,0,0,0.14)",
+          }}
+        >
+          <EmptyChat />
+        </Box>
+      </Box>
     </Dialog>
   );
 };
