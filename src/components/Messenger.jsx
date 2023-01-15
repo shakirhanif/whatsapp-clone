@@ -16,7 +16,7 @@ const Messenger = () => {
   const account = useSelector((state) => state.account.accountState);
   return (
     <>
-      {!account ? (
+      {account ? (
         <>
           <LoginHeader position="static" sx={{ height: "125px" }}>
             <Toolbar></Toolbar>
