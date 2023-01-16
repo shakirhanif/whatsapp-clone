@@ -23,7 +23,7 @@ const Chat = () => {
       }}
     >
       <Box sx={{ display: "flex", flexDirection: "row", height: "100%" }}>
-        <Box sx={{ width: "30%", minWidth: "200px", height: "100%" }}>
+        <Box sx={{ width: "30%", minWidth: "260px", height: "100%" }}>
           <Menu />
         </Box>
         <Box

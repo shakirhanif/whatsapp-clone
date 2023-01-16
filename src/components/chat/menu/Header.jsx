@@ -49,7 +49,7 @@ const Header = () => {
         >
           <DonutLargeIcon sx={{ marginRight: "10px" }} />
           <ChatIcon sx={{ marginX: "10px", paddingTop: "2px" }} />
-          <HeaderMenu sx={{ marginLeft: "8px" }} toggleDrawer={toggleDrawer} />
+          <HeaderMenu sx={{ marginLeft: "4px" }} toggleDrawer={toggleDrawer} />
         </Box>
       </Box>
       <InfoDrawer open={openDrawer} closeDrawer={closeDrawer} />
