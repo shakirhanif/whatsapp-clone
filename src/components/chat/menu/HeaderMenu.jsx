@@ -4,7 +4,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { MoreVert } from "@mui/icons-material";
 
-export default function BasicMenu() {
+export default function BasicMenu({ toggleDrawer }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -40,7 +40,10 @@ export default function BasicMenu() {
         }}
       >
         <MenuItem
-          onClick={handleClose}
+          onClick={() => {
+            handleClose();
+            toggleDrawer();
+          }}
           sx={{
             fontSize: "14px",
             paddingTop: "15px",

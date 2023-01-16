@@ -1,6 +1,7 @@
 import { ArrowBack } from "@mui/icons-material";
 import { Box, Drawer, Typography } from "@mui/material";
 import React from "react";
+import Profile from "./Profile";
 
 const InfoDrawer = ({ open, closeDrawer }) => {
   return (
@@ -50,7 +51,9 @@ const InfoDrawer = ({ open, closeDrawer }) => {
             Profile
           </Typography>
         </Box>
-        <Box></Box>
+        <Box>
+          <Profile />
+        </Box>
       </Drawer>
     </div>
   );
